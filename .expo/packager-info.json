@@ -1,8 +1,8 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 16951,
+  "packagerPort": null,
+  "packagerPid": null,
   "expoServerNgrokUrl": "https://ut-49v.anonymous.qrscanner.exp.direct",
   "packagerNgrokUrl": "https://packager.ut-49v.anonymous.qrscanner.exp.direct",
   "ngrokPid": 17021
