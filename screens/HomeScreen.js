@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {RNCamera} from 'react-native-camera';
 
 import { MonoText } from '../components/StyledText';
 
@@ -53,6 +54,19 @@ export default function HomeScreen() {
         </View>
       </ScrollView>
 
+      <RNCamera
+          ref={ref => {
+            this.camera = ref;
+          }}
+          style={{
+            flex: 1,
+            width: '100%',
+          }}
+          onGoogleVisionBarcodesDetected={this.barcodeRecognized}
+        >
+        </RNCamera>
+
+
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
           This is a tab bar. You can edit it in:
@@ -71,6 +85,10 @@ export default function HomeScreen() {
 
 HomeScreen.navigationOptions = {
   header: null,
+};
+
+barcodeRecognized = ({ barcodes }) => {
+  barcodes.forEach(barcode => console.warn(barcode.data))
 };
 
 function DevelopmentModeNotice() {
